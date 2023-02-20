@@ -1,0 +1,414 @@
+{
+  "info": {
+    "_postman_id": "55eeb7fb-db61-4122-95d0-3cc6bd28073f",
+    "name": "Blog",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14020293"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register Blogger 1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Ghaan Wooflsen\",\n    \"email\": \"gw@gmail.com\",\n    \"password\": \"gwforever\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:7777/auth/register",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register Blogger 2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Pro\",\n    \"email\": \"jp@gmail.com\",\n    \"password\": \"johnprowhatever\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:7777/auth/register",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Blogger 1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"gw@gmail.com\",\n    \"password\": \"gwforever\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:7777/auth/login",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Blogger 2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"jp@gmail.com\",\n    \"password\": \"johnprowhatever\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:7777/auth/login",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Admin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:7777/auth/login",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/auth/logout",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["auth", "logout"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "All (debug purposes)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/posts/all",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["posts", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All by user ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/posts/user/a6e351e4-f400-4c9d-b4c4-c9d0149267b2",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["posts", "user", "a6e351e4-f400-4c9d-b4c4-c9d0149267b2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All published by user ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/posts/user/a6e351e4-f400-4c9d-b4c4-c9d0149267b2/all",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": [
+                "posts",
+                "user",
+                "a6e351e4-f400-4c9d-b4c4-c9d0149267b2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All published",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/posts/all/published",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["posts", "all", "published"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "One by post ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/posts/6e52bd27-dcef-4ee8-bafd-01c08429c6e6",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["posts", "6e52bd27-dcef-4ee8-bafd-01c08429c6e6"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Renaissance period overview\",\n    \"body\": \"The Renaissance was a fervent period of European cultural, artistic, political and economic “rebirth” following the Middle Ages. Generally described as taking place from the 14th century to the 17th century, the Renaissance promoted the rediscovery of classical philosophy, literature and art. Some of the greatest thinkers, authors, statesmen, scientists and artists in human history thrived during this era, while global exploration opened up new lands and cultures to European commerce. The Renaissance is credited with bridging the gap between the Middle Ages and modern-day civilization.\",\n    \"published\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:7777/posts",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"New title\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:7777/posts/6e52bd27-dcef-4ee8-bafd-01c08429c6e6",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["posts", "6e52bd27-dcef-4ee8-bafd-01c08429c6e6"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Publish",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/posts/6e52bd27-dcef-4ee8-bafd-01c08429c6e6/publish",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": [
+                "posts",
+                "6e52bd27-dcef-4ee8-bafd-01c08429c6e6",
+                "publish"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Hide",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/posts/b020b1aa-8f54-464e-bfd0-7e8f006f5bb9/hide",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["posts", "b020b1aa-8f54-464e-bfd0-7e8f006f5bb9", "hide"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All (debug purposes)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/posts/all",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["posts", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "One (debug purposes)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/posts/6e52bd27-dcef-4ee8-bafd-01c08429c6e6",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["posts", "6e52bd27-dcef-4ee8-bafd-01c08429c6e6"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/users/all",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["users", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "One by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/users/8059962c-cf36-4072-82ba-71f2ecf4a041",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["users", "8059962c-cf36-4072-82ba-71f2ecf4a041"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Peter Smith\",\n    \"role\": \"ADMIN\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:7777/users/88756562-f3fa-48d3-ae87-5c98d373456f",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["users", "88756562-f3fa-48d3-ae87-5c98d373456f"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "One",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/users/af18a88f-ef54-4c56-bf72-3b5cc8e095b2",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["users", "af18a88f-ef54-4c56-bf72-3b5cc8e095b2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:7777/users/all",
+              "host": ["localhost"],
+              "port": "7777",
+              "path": ["users", "all"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

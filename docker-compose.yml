@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: blog-postgres
+    ports:
+      - '6432:5432'
+    volumes:
+      - /tmp/postgres:/data/postgres
+    env_file:
+      - dev.docker.env
+    networks:
+      - postgres
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: blog-pgadmin
+    links:
+      - postgres:postgres
+    ports:
+      - '9876:80'
+    volumes:
+      - /tmp/pgadmin:/root/.pgadmin
+    env_file:
+      - dev.docker.env
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
